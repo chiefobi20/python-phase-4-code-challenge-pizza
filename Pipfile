@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 Faker = "14.2.0"
-Flask = "2.2.2"
+Flask = "*"
 Flask-Migrate = "3.1.0"
 Flask-SQLAlchemy = "2.5.1"
 importlib-resources = "5.10.0"
