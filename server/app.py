@@ -35,7 +35,7 @@ def get_restaurant(id):
     restaurant = db.session.get(Restaurant, id)
 
     if restaurant:
-        return make_response(jsonify(restaurant.to_dict()), 200)
+        return make_response(jsonify(restaurant.to_dict(rules=('-restaurant_pizzas.pizza', '-restaurant_pizzas.restaurant'))), 200)
     else:
         response_body = {
             "error": "Restaurant not found"
@@ -75,7 +75,7 @@ def add_restaurant_pizza():
         return make_response(jsonify(response_body), 201)
     except:
         response_body = {
-            "errors": ["Validation errors"]
+            "errors": ["validation errors"]
         }
         return make_response(response_body, 400)
 
